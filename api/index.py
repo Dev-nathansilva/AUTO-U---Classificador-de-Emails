@@ -7,8 +7,12 @@ from PyPDF2 import PdfReader
 from dotenv import load_dotenv
 from openai import OpenAI
 import json
+from pathlib import Path
+
 
 load_dotenv(dotenv_path=".env.local")
+
+ROOT = Path(__file__).parent
 
 app = Flask(
     __name__,
