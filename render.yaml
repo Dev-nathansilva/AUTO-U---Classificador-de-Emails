@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: auto-u
+    env: python
+    buildCommand: ""
+    startCommand: gunicorn api.index:app
+    envVars:
+      - key: OPENAI_API_KEY
+        sync: false
