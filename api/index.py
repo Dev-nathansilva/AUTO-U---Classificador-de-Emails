@@ -7,18 +7,16 @@ from PyPDF2 import PdfReader
 from dotenv import load_dotenv
 from openai import OpenAI
 import json
-from pathlib import Path
 
 
 load_dotenv(dotenv_path=".env.local")
 
-ROOT = Path(__file__).parent
-
 app = Flask(
     __name__,
-    template_folder=str(ROOT / "backend" / "templates"),
-    static_folder=str(ROOT / "backend" / "static")
+    template_folder="../backend/templates",
+    static_folder="../backend/static"
 )
+
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 UPLOAD_FOLDER = tempfile.gettempdir()
